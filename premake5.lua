@@ -10,7 +10,7 @@ project "nativefiledialog-extended"
 
 	includedirs
 	{
-		"include"
+		"src/include"
 	}
 
 	filter "system:windows"
