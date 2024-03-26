@@ -15,10 +15,20 @@ project "nativefiledialog-extended"
 
 	filter "system:windows"
 		files { "src/nfd_win.cpp" }
+
 	filter "system:linux"
 		files { "src/nfd_gtk.cpp" }
+		buildoptions { "`pkg-config --cflags gtk+-3.0 glib-2.0`" }
+		linkoptions { "`pkg-config --libs gtk+-3.0 glib-2.0`" }
+
 	filter "system:macosx"
 		files { "src/nfd_cocoa.m" }
+
+		links
+		{
+            "AppKit.framework",
+            "UniformTypeIdentifiers.framework"
+        }
 
 	filter "configurations:Debug"
 		runtime "Debug"
