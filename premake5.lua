@@ -18,8 +18,8 @@ project "nativefiledialog-extended"
 
 	filter "system:linux"
 		files { "src/nfd_gtk.cpp" }
-		buildoptions { "`pkg-config --cflags gtk+-3.0 glib-2.0`" }
-		linkoptions { "`pkg-config --libs gtk+-3.0 glib-2.0`" }
+		buildoptions { "`pkg-config --cflags gtk+-3.0 glib-2.0 gobject-2.0 gio-2.0`" }
+		linkoptions { "`pkg-config --libs gtk+-3.0 glib-2.0 gobject-2.0 gio-2.0`" }
 
 	filter "system:macosx"
 		files { "src/nfd_cocoa.m" }
